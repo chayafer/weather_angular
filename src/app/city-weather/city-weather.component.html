@@ -1,0 +1,14 @@
+<p>city-weather works!</p>
+<div>
+    <input type="text" [(ngModel)]="keyP">
+    <input type="button" value="search" (click)="searchCity()">
+    <ul>
+        <li *ngFor="let city of cities; let i = index" (click)="getCurrentWeather(city)">{{city.cityName}}</li>
+    </ul>
+    <div *ngIf="cityWeather">
+        <div class="block">{{cityWeather.localizedName}}</div>
+        <span>{{cityWeather.temperature}}</span>
+        <span>{{cityWeather.weatherText}}</span>
+        <div><button (click)="addToFavourites()">add to favourites</button></div>
+    </div>
+</div>
